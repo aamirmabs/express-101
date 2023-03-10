@@ -44,6 +44,12 @@ app.get('/about', (req, res) => {
   res.render('about');
 });
 
+// Define the /contact route
+app.get('/contact', (req, res) => {
+  // Render the contact page without passing any data
+  res.render('contact');
+});
+
 
 // Start the server
 app.listen(PORT, () => {
