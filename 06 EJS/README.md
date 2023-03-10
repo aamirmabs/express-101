@@ -8,18 +8,18 @@ Next, install the dependencies needed to build our application:
 
 `npm install express ejs --save`
 
-Create a new file named app.js and add the following code:
+Create a new file named `app.js` and add the following code:
 
 ```js
-const express = require('express');
+const express = require("express");
 const app = express();
 
-app.set('view engine', 'ejs');
-app.use(express.static(\_\_dirname + '/public'));
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
 ```
 
@@ -55,8 +55,9 @@ This creates an array of objects, with each object representing a blog post.
 
 ## Creating the EJS Files
 
-Create a new folder named views in your project directory. Inside the views folder, create two new files named `index.ejs` and `blog.ejs`.
-In the index.ejs file, add the following code:
+Create a new folder named `views` in your project directory. Inside the `views` folder, create two new files named `index.ejs` and `blog.ejs`.
+
+In the `index.ejs` file, add the following code:
 
 ```HTML
 <!DOCTYPE html>
