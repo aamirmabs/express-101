@@ -210,9 +210,14 @@ Here's the complete code for app.js. Please not that in the content of the blog 
 ```js
 const express = require("express");
 const app = express();
-const port = 3000;
 
-// Define the blog data
+// Set the port number from .env file or use 3000 if not set
+const PORT = process.env.PORT || 3000;
+
+// fetching the blog data from blogData.json
+// const blogData = require("./blogData.json");
+
+// in our case, we will initialize the blogData with some dummy data
 const blogData = [
   {
     id: 1,
@@ -236,28 +241,36 @@ const blogData = [
 
 // Set the view engine to ejs
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 
 // Define the index route
 app.get("/", (req, res) => {
-  const blogPreviews = blogData.map((blog) => {
-    return {
-      title: blog.title,
-      description: blog.description,
-      id: blog.id,
-    };
-  });
-  res.render("index", { blogPreviews });
+  // you will first fetch the data to be rendered
+  // often, you will make an async call to fetch the data from a database
+
+  // in our case, let's initialize the blog data from blogData.json
+  const blogs = blogData.blogs;
+
+  // render the index.ejs file and pass the data (the blogs variable in our case) to be rendered
+  res.render("index", { blogs });
 });
 
 // Define the blog post route
 app.get("/blog/:id", (req, res) => {
-  const blogId = parseInt(req.params.id);
-  const blogPost = blogData.find((blog) => blog.id === blogId);
-  res.render("blog", { blogPost });
+  // we will get the blog id from the url params
+  const id = req.params.id;
+
+  // you will then fetch the data to be rendered from the database
+
+  // in our case we will fetch the blog entry using the id
+  const blog = blogData.blogs[id];
+
+  // render the blog.ejs file and pass the fetched data to be rendered
+  res.render("blog", { blog });
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 ```
