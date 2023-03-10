@@ -57,6 +57,16 @@ This creates an array of objects, with each object representing a blog post.
 
 Create a new folder named `views` in your project directory. Inside the `views` folder, create two new files named `index.ejs` and `blog.ejs`.
 
+### Side note on EJS plugins for VS Code
+
+If you are using VS Code, you can install the [EJS Language Support](https://marketplace.visualstudio.com/items?itemName=QassimFarid.ejs-language-support) plugin to get syntax highlighting and code completion for EJS files.
+
+If your editor does not have a plugin for EJS, you can still use EJS. You will just need to make sure that you are using the correct syntax.
+
+If the formatting is not supported, you may refer to the plugin where you can find instructions on how to set up the syntax highlighting and code completion for EJS in the settings.json file.
+
+---
+
 In the `index.ejs` file, add the following code:
 
 ```HTML

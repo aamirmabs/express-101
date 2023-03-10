@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Blog</title>
+</head>
+
+<body>
+  <h1>Welcome to My Blog</h1>
+  <% blogs.forEach(blog=> { %>
+    <h2>
+      <%= blog.title %>
+    </h2>
+    <p>
+      <%= blog.description %>
+    </p>
+    <% }) %>
+</body>
+
+</html>
