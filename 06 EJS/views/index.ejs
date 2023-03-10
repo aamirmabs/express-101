@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="menu">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <h1 class="title">Welcome to My Blog</h1>
+  <% blogs.forEach(blog=> { %>
+    <h2 class="subtitle">
+      <a href="/blog/<%= blog.id %>">
+        <%= blog.title %>
+      </a>
+    </h2>
+    <p class="description">
+      <%= blog.description %>
+    </p>
+
+    <% }) %>
+</body>
+
+</html>
