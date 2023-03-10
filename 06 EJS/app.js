@@ -38,6 +38,13 @@ app.get("/blog/:id", (req, res) => {
   res.render("blog", { blog });
 });
 
+// Define the /about route
+app.get('/about', (req, res) => {
+  // Render the about page without passing any data
+  res.render('about');
+});
+
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
