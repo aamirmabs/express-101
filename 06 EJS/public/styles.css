@@ -39,6 +39,26 @@ a {
   padding: 0 2.5rem;
 }
 
+/* blog page styling */
+
+.blog-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.blog-description {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.blog-content {
+  margin-bottom: 1rem;
+}
+
+/* form styling */
 form {
   display: flex;
   flex-direction: column;

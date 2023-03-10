@@ -15,11 +15,14 @@
   <h1 class="title">Welcome to My Blog</h1>
   <% blogs.forEach(blog=> { %>
     <h2 class="subtitle">
-      <%= blog.title %>
+      <a href="/blog/<%= blog.id %>">
+        <%= blog.title %>
+      </a>
     </h2>
     <p class="description">
       <%= blog.description %>
     </p>
+
     <% }) %>
 </body>
 

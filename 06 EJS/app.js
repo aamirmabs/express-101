@@ -27,12 +27,15 @@ app.get("/", (req, res) => {
 // Define the blog post route
 app.get("/blog/:id", (req, res) => {
   // we will get the blog id from the url params
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
+  // console.log(id);
+  // console.log(typeof (id));
 
   // you will then fetch the data to be rendered from the database
 
   // in our case we will fetch the blog entry using the id
-  const blog = blogData.blogs[id];
+  // const blog = blogData.blogs.id;
+  const blog = blogData.blogs.find(blog => blog.id === id);
 
   // render the blog.ejs file and pass the fetched data to be rendered
   res.render("blog", { blog });
